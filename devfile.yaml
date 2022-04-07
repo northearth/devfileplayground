@@ -1,28 +1,3 @@
 schemaVersion: 2.1.0
 metadata:
   name: devfile-sample
-components:
-  - name: tools
-    container:
-      image: quay.io/eclipse/che-java11-maven:7.37.2
-      memoryLimit: 512Mi
-      endpoints:
-        - exposure: none
-          name: debug
-          protocol: tcp
-          targetPort: 5005
-commands:
-  - id: run-main
-    exec:
-      label: "実行: Main"
-      component: tools
-      workingDir: ${PROJECT_SOURCE}
-      commandLine: |
-        set -e
-        shopt -s globstar
-        mkdir target || true
-        javac -d target -encoding UTF-8 **.java
-        java -Dfile.encoding=UTF-8 -cp target Main
-      group:
-        kind: run
-        isDefault: true
