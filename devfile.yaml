@@ -5,4 +5,4 @@ components:
   - name: tools
     container:
       image: quay.io/eclipse/che-java11-maven:7.37.2
-      memoryLimit: 512Mi
+      memoryLimit: 1Gi
