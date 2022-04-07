@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        ".git": true,
+        ".vscode": true,
+        "**/.gitignore": true,
+        "devfile.yaml": true
+    },
+    "git.enabled": false
+}
