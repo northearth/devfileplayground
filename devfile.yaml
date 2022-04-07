@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      image: quay.io/eclipse/che-java11-maven:7.37.2
       memoryLimit: 512Mi
       endpoints:
         - exposure: none
@@ -14,6 +14,7 @@ components:
 commands:
   - id: run-main
     exec:
+      label: "実行: Main"
       component: tools
       workingDir: ${PROJECT_SOURCE}
       commandLine: |
@@ -22,3 +23,6 @@ commands:
         mkdir target || true
         javac -d target -encoding UTF-8 **.java
         java -Dfile.encoding=UTF-8 -cp target Main
+      group:
+        kind: run
+        isDefault: true
