@@ -3,7 +3,8 @@
         ".git": true,
         ".vscode": true,
         "**/.gitignore": true,
-        "devfile.yaml": true
+        "devfile.yaml": true,
+        "_ipmanten": true
     },
     "git.enabled": false
 }
